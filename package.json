@@ -2,7 +2,7 @@
   "name": "@jack7cz/muj-super-eshop",
   "version": "1.0.0",
   "description": "Muj super jednoduchy e-shop, postaveny na Vue.",
-  "main": "index.js",
+  "main": "./server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jack7cz/vue_muj-super-eshop/issues"
   },
-  "homepage": "https://github.com/jack7cz/vue_muj-super-eshop#readme"
+  "homepage": "https://github.com/jack7cz/vue_muj-super-eshop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
