@@ -27,6 +27,19 @@ server.get('/api/products/available', function (req, res) {
     res.json(availableProducts)
 });
 
+server.get('/api/products/featured', function (req, res) {
+  const data = require('./data.json')
+  const featuredProducts = {}
+
+  Object.entries(data).forEach(([key, val]) => {
+    if (val.tag == "featured") {
+      featuredProducts[key] = val
+    }
+  })
+
+  res.json(featuredProducts)
+});
+
 server.listen(5000, function () {
   console.log('Server bezi na adrese http://localhost:5000')
 })
