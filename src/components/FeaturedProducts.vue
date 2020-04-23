@@ -8,7 +8,7 @@
             <div class="container">
               <div class="row">
                 <div class="col col-md-3 text-center" style="border: 1px solid blue;" v-for="(featuredProduct, key) of featuredProducts" :key="key">  
-                  <router-link :to="{name: 'Product', params: {product_id: key}}">
+                  <router-link :to="{name: 'Product', params: {product_id: featuredProduct.url}}">
                     <h5>{{featuredProduct.title}}</h5>
                     <p><img :src="featuredProduct.image + '/100/100'" :alt="featuredProduct.title"></p> 
                     <p><strike v-if="featuredProduct.original_price" style="color: grey;">{{ featuredProduct.original_price + ' Kč' }}</strike> {{ featuredProduct.price + ' Kč' }} </p>

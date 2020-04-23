@@ -43,7 +43,7 @@ export default {
     },
     mounted() {
         const productId = this.$route.params.product_id;
-        fetch(`http://localhost:5000/api/product/${productId}`)
+        fetch(`http://localhost:5000/api/product/url/${productId}`)
         .then((response) => response.json())
         .then((data) => {
             if(data.err) {
