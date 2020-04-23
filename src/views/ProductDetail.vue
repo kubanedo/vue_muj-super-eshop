@@ -1,6 +1,7 @@
 <template>
   <div>
       <div v-if="isLoading">Loading ...</div>
+      <div v-else-if="noData">Tento produkt neexistuje.</div>
       <div v-else>
             <h1>{{ productData.title }}</h1>
             <div class="row">
@@ -36,6 +37,7 @@ export default {
     data() {
         return {
             isLoading: true,
+            noData: false,
             productData: {}
         }
     },
@@ -43,7 +45,13 @@ export default {
         const productId = this.$route.params.product_id;
         fetch(`http://localhost:5000/api/product/${productId}`)
         .then((response) => response.json())
-        .then((data) => this.productData = data)
+        .then((data) => {
+            if(data.err) {
+                this.noData = true;
+            } else {
+                this.productData = data;
+            }    
+        })
         .then(() => this.isLoading = false)
     }
 }

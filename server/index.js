@@ -18,7 +18,13 @@ server.get('/api/products', function (req, res) {
 
 server.get('/api/product/:product_id', function (req, res) {
     const data = require('./data.json');
-    res.json(data[req.params.product_id])
+    const productData = data[req.params.product_id];
+    if (productData === undefined || productData === null)  {
+      console.log('no data')
+      res.json({ "err": "nodata"})
+    } else {
+      res.json(data[req.params.product_id])
+    }   
 });
 
 server.get('/api/products/available', function (req, res) {
