@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1 class="text-center">Homepage</h1>
-    <featured-products number="4"></featured-products>
+    <featured-products count="4"></featured-products>
   </div>
 </template>
 
