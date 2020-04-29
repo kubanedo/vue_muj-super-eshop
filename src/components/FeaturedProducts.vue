@@ -7,7 +7,7 @@
           <h2>Featured products ({{ this.number }})</h2>
             <div class="container">
               <div class="row">
-                <div class="col col-md-3 text-center" style="border: 1px solid blue;" v-for="(featuredProduct, key) of featuredProducts" :key="key">  
+                <div class="col col-md-3 text-center" v-for="(featuredProduct, key) of featuredProducts" :key="key">  
                   <router-link :to="{name: 'Product', params: {product_id: key}}">
                     <h5>{{featuredProduct.title}}</h5>
                     <p><img :src="featuredProduct.image + '/100/100'" :alt="featuredProduct.title"></p> 
@@ -44,6 +44,13 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+@import './../styles/variables.scss';
+  a {
+    text-decoration: none;
+    color: $text-color;
+    h5 {
+      color: $accent3;
+    }
+  }
 </style>
