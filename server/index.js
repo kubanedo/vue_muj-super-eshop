@@ -16,9 +16,26 @@ server.get('/api/products', function (req, res) {
     res.sendFile(filePath)
   });
 
-server.get('/api/product/:product_id', function (req, res) {
-    const data = require('./data.json');
+server.get('/api/product/url/:url_id', function (req, res) {
+    const data = require('./data-by-url.json');
+    const productData = data[req.params.url_id];
+    if (productData === undefined || productData === null)  {
+      console.log('no data')
+      res.json({ "err": "nodata"})
+    } else {
+      res.json(data[req.params.url_id])
+    }  
+});
+
+server.get('/api/product_by_url/:product_id', function (req, res) {
+  const data = require('./data.json');
+  const productData = data[req.params.product_id];
+  if (productData === undefined || productData === null) {
+    console.log('no data')
+    res.json({ "err": "nodata" })
+  } else {
     res.json(data[req.params.product_id])
+  }
 });
 
 server.get('/api/products/available', function (req, res) {
