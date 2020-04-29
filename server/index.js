@@ -117,6 +117,24 @@ server.get('/api/products/featured/:number_of_products', function (req, res) {
   res.json(featuredProducts)
 });*/
 
+server.get('/api/category_list/', function (req, res) {
+  const filePath = path.resolve(__dirname, './category_list.json')
+  res.sendFile(filePath)
+});
+
+server.get('/api/category_list/:category_id', function (req, res) {
+  const data = require('./data.json')
+  const categoryProducts = {}
+
+  Object.entries(data).forEach(([key, val]) => {
+    if (val.category.id == req.params.category_id) {
+      categoryProducts[key] = val
+    }
+  })
+
+  res.json(categoryProducts)
+});
+
 server.listen(5000, function () {
   console.log('Server bezi na adrese http://localhost:5000')
 })

@@ -4,7 +4,8 @@ import Home from '../views/Home.vue'
 import ProductDetail from '../views/ProductDetail.vue'
 import Error404 from '../views/Error404.vue'
 import Products from '../views/Products'
-
+import Categories from '../views/Categories'
+import CategoryDetail from '../views/CategoryDetail'
 Vue.use(VueRouter)
 
   const routes = [
@@ -23,6 +24,16 @@ Vue.use(VueRouter)
     name: 'Product',
     component: ProductDetail
   },
+  {
+    path: '/categories',
+    name: 'Categories',
+    component: Categories
+  },
+  {
+    path: '/category/:category_id',
+    name: 'Category',
+    component: CategoryDetail
+  },    
   {
     path: '*',
     name: 'Error404',

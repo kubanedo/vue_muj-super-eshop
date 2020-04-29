@@ -5,7 +5,7 @@
                 v-for="(productData, key) of productsList"
                 :key="key"
                 :productData="productData"
-                :productId="key"
+                :productId="productData.url"
         />
     </div>
 </div>      

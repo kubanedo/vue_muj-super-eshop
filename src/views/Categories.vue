@@ -1,24 +1,26 @@
 <template>
   <div>
     <h1>Všechny kategorie</h1>
-    <ProductsList :products-list="productsList" />
+    <div v-for="(category, key) of categoryList" :key="key">
+      <router-link :to="{name: 'Category', params: {category_id: key, category_name: category.category_name}}">
+        {{key}} {{category.category_name}}
+      </router-link>  
+    </div> 
   </div>
 </template>
 
 <script>
-import ProductsList from '../components/ProductsList'
 export default {
-  name: 'Products',
-  components: { ProductsList },
+  name: 'Categories',
   data () {
     return {
-      productsList: {}
+      categoryList: {}
     }
   },
   mounted () {
-    fetch(`http://localhost:5000/api/products/`)
+    fetch(`http://localhost:5000/api/category_list/`)
       .then((response) => response.json())
-      .then((data) => this.productsList = data)
+      .then((data) => this.categoryList = data);  
   }
 }
 </script>

@@ -6,7 +6,8 @@
         </div> 
         <div id="nav" class="col-12 col-md-9">
             <router-link to="/">Home</router-link> |
-            <router-link :to="{name: 'Products'}">Products</router-link>
+            <router-link :to="{name: 'Products'}">Products</router-link> |
+            <router-link :to="{name: 'Categories'}">Categories</router-link>
         </div>
       </div> 
     </div>

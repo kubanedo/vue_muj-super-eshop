@@ -2,6 +2,7 @@
                 <div class="col col-md-3 text-center p-2 mb-4">  
                   <router-link :to="{name: 'Product', params: {product_id: productId}}">
                     <h5>{{productData.title}}</h5>
+                    <p>{{productData.category.name}}</p>
                     <p><img :src="productData.image + '/100/100'" :alt="productData.title"></p> 
                     <p><strike v-if="productData.original_price" style="color: grey;">{{ productData.original_price + ' Kč' }}</strike> {{ productData.price + ' Kč' }} </p>
                     <p v-if="productData.discount"><strong>Sleva:</strong> {{ `- ${productData.discount * 100} %` }}</p>

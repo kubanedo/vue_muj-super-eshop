@@ -1,0 +1,44 @@
+{
+ "1": {
+            "category_name": "Nápoje"
+        },
+ "2": {
+            "category_name": "Konzervované potraviny"
+        },
+ "3": {
+            "category_name": "Trvanlivé potraviny, rýže, těstoviny"
+        },
+ "4": {
+            "category_name": "Dresingy, pesta, omáčky"
+        },
+ "5": {
+            "category_name": "Džemy, medy, sladké pomazánky"
+        },
+ "6": {
+            "category_name": "Oleje, octy"
+        },
+ "7": {
+            "category_name": "Instantní pokrmy"
+        },
+ "8": {
+            "category_name": "Cereálie, müsli, kaše"
+        },
+ "9": {
+            "category_name": "Sladké potravinky"
+        },
+ "10": {
+            "category_name": "Mléčné potraviny"
+        },
+ "11": {
+            "category_name": "Slané potraviny"
+        },
+ "12": {
+            "category_name": "Koření, ochucovadla"
+        },
+ "13": {
+            "category_name": "Pečení, přísady na vaření"
+        },
+ "14": {
+            "category_name": "Ořechy, semena"
+        }
+}
