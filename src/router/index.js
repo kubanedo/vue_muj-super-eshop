@@ -1,38 +1,49 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import ProductDetail from '../views/ProductDetail.vue'
+
 import Error404 from '../views/Error404.vue'
-import Products from '../views/Products'
-import Categories from '../views/Categories'
-import CategoryDetail from '../views/CategoryDetail'
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import(
+      '../views/Home.vue'
+      /* webpackChunkName: 'HomeView' */
+    )
   },
   {
     path: '/products',
     name: 'Products',
-    component: Products
+    component: () => import(
+      '../views/Products.vue'
+      /* webpackChunkName: 'AllProductsView' */
+    )
   },
   {
     path: '/product/:product_id',
     name: 'Product',
-    component: ProductDetail
+    component: () => import(
+      '../views/ProductDetail.vue'
+      /* webpackChunkName: 'ProductView' */
+    )
   },
   {
     path: '/categories',
     name: 'Categories',
-    component: Categories
+    component: () => import(
+      '../views/Categories.vue'
+      /* webpackChunkName: 'CategoriesView' */
+    )
   },
   {
     path: '/category/:category_id',
     name: 'Category',
-    component: CategoryDetail
+    component: () => import(
+      '../views/CategoryDetail.vue'
+      /* webpackChunkName: 'CategoryDetail' */
+    )
   },    
   {
     path: '*',
