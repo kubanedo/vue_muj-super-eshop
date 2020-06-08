@@ -21,6 +21,14 @@ Vue.use(VueRouter)
       /* webpackChunkName: 'AllProductsView' */
     )
   },
+    {
+      path: '/transitions',
+      name: 'Transitions',
+      component: () => import(
+        '../components/Transitions.vue'
+        /* webpackChunkName: 'Transitions' */
+      )
+    },  
   {
     path: '/product/:product_id',
     name: 'Product',
