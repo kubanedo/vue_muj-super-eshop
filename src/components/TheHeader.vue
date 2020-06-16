@@ -4,18 +4,23 @@
         <div id="logo" class="col-12 col-md-3">
             <router-link to="/">Super eshop</router-link>
         </div> 
-        <div id="nav" class="col-12 col-md-9">
+        <div id="nav" class="col-12 col-md-7">
             <router-link to="/">Home</router-link> |
             <router-link :to="{name: 'Products'}">Products</router-link> |
             <router-link :to="{name: 'Categories'}">Categories</router-link>
+        </div>
+        <div id="cart" class="col-12 col-md-2">
+            <TheCart/>
         </div>
       </div> 
     </div>
 </template>
 
 <script>
+import TheCart from '../components/TheCart.vue';
 export default {
-    name: 'TheHeader'
+    name: 'TheHeader',
+    components: { TheCart }
 }
 </script>
 
@@ -44,5 +49,9 @@ export default {
       color: $inverted-text-color;
     }
   }
+}
+#cart {
+  padding: 30px 0;
+  color: white;
 }
 </style>
