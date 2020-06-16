@@ -4,7 +4,11 @@
                     <h5>{{productData.title}}</h5>
                   </router-link>
                     <p>{{productData.category.name}}</p>
-                    <p><img :src="productData.image + '/100/100'" :alt="productData.title"></p> 
+                    <p>
+                      <transition name="fade" appear>
+                        <img :src="productData.image + '/100/100'" :alt="productData.title">
+                      </transition>
+                    </p> 
                     <p><strike v-if="productData.original_price" style="color: grey;">{{ productData.original_price + ' Kč' }}</strike> {{ productData.price + ' Kč' }} </p>
                     <p v-if="productData.discount"><strong>Sleva:</strong> {{ `- ${productData.discount * 100} %` }}</p>
                     <p v-if="productData.stock > 0" style="color: green;">Skladem {{productData.stock}} ks</p>  
@@ -51,5 +55,13 @@ export default {
         background: $accent2;
       }
   }
-
+//Fade
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
